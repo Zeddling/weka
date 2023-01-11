@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 async-std = {version = "1.12.0", features = ["attributes"]}
+log = "0.4.17"
+log4rs = "1.2.0"
 futures = "0.3.25"
 libp2p = {version = "0.50.0", features = ["tcp", "dns", "async-std", "websocket", "ping", "noise", "mplex", "yamux"] }
 libp2p-swarm = "0.41.1"
