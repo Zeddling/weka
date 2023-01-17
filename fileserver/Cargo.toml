@@ -13,3 +13,4 @@ futures = "0.3.25"
 libp2p = {version = "0.50.0", features = ["tcp", "dns", "async-std", "websocket", "ping", "noise", "mplex", "yamux"] }
 libp2p-swarm = "0.41.1"
 libp2p-swarm-derive = "0.31.0"
+uuid = {version = "1.2.2", features = ["v4", "fast-rng", "macro-diagnostics"]}

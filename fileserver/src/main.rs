@@ -2,7 +2,6 @@ use log::LevelFilter;
 use log4rs::{append::console::ConsoleAppender, Config, config::{Appender, Root}, init_config, Handle};
 use server::Node;
 
-mod constants;
 mod server;
 
 #[async_std::main]
@@ -14,7 +13,7 @@ async fn main() {
 
 
 /**
- * COnfigure logging
+ * Configure logging
  */
 fn log() -> Handle {
     let stdout = ConsoleAppender::builder().build();

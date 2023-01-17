@@ -12,6 +12,10 @@ use libp2p::{
 use libp2p_swarm_derive::NetworkBehaviour;
 use log::info;
 
+use self::file_ops::NetworkFolder;
+
+mod file_ops;
+
 #[derive(NetworkBehaviour, Default)]
 struct Behaviour {
     keep_alive: keep_alive::Behaviour,
@@ -20,7 +24,8 @@ struct Behaviour {
 
 pub struct Node {
     local_peer_id: PeerId,
-    swarm: Swarm<Behaviour>
+    network_folder: NetworkFolder,
+    swarm: Swarm<Behaviour>,
 }
 
 impl Node {
@@ -35,8 +40,10 @@ impl Node {
             "/ip4/127.0.0.1/tcp/0".parse().unwrap()
         ).unwrap();
 
+        let network_folder = NetworkFolder::create();
         Node { 
             local_peer_id, 
+            network_folder,
             swarm
         }
     }
