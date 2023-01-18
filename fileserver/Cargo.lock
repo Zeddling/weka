@@ -832,6 +832,8 @@ dependencies = [
  "libp2p-swarm-derive",
  "log",
  "log4rs",
+ "serde",
+ "serde_json",
  "uuid",
 ]
 

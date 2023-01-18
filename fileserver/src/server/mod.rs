@@ -14,7 +14,7 @@ use log::info;
 
 use self::file_ops::NetworkFolder;
 
-mod file_ops;
+pub mod file_ops;
 
 #[derive(NetworkBehaviour, Default)]
 struct Behaviour {
